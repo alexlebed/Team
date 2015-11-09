@@ -1,0 +1,27 @@
+<div class="container">
+	<div class="row">
+	  <div class="col-sm-offset-4 col-sm-4 col-sm-offset-4 col-md-offset-4 col-md-4 col-md-offset-4 col-lg-offset-4 col-lg-4 col-lg-offset-4">  <input ng-model="query" class="searcher"></div>
+	</div>
+
+	<table>
+	    <thead>
+			<tr>
+				<th ng-click="sort('name')" class="forclick">Sort by name
+				    <i class="glyphicon" ng-class="{'glyphicon-chevron-up': isSortUp('name'), 'glyphicon-chevron-down': isSortDown('name')}"></i>
+				</th>
+			</tr>
+		</thead>
+	</table>
+	
+	<ul ng-repeat="item in items | filter:query | orderBy:sortField:reverse">
+		<li><b>Name: {{item.name}}</b></li>
+		<li>Position: {{item.position}}</li>
+		<li>Jersey Number: {{item.jerseyNumber}}</li>
+		<li>Date Of Birth: {{item.dateOfBirth}}</li>
+		<li>Nationality: {{item.nationality}}</li>
+		<li>Contract Until: {{item.contractUntil}}</li>
+		<li>Market Value: {{item.marketValue}}</li>
+		<hr>
+	</ul>
+</div>
+
